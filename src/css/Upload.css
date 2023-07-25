@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.content-upload{
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+
+    border-top: 2px solid #EAECF0;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.section-label{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.label-title{
+    margin: 0;
+    color: var(--gray-700, #344054);
+
+    /* Text sm/Semibold */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+}
+
+.label-description{
+    margin: 0;
+    color: var(--gray-600, #475467);
+
+    /* Text sm/Regular */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+.avatar-and-fileupload{
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.img-upload{
+    border-radius: 200px;
+    align-self: center;
+}
+
+.avatar-and-fileupload a{
+    text-decoration: none;
+}
+
+.upload-field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 24px;
+
+    background: none;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    
+    width: 416px;
+}
+
+.border-upload-icon{
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.flex-div{
+    display: flex;
+    gap: 2px;
+}
+
+.color-green{
+    margin: 0;
+    color: var(--gray-600, #2E6E54);
+
+    /* Text sm/Regular */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+.color-grey{
+    margin: 0;
+    color: var(--gray-600, #475467);
+
+    /* Text sm/Regular */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
