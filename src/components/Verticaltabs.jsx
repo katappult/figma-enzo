@@ -4,6 +4,8 @@ import "../css/Verticaltabs.css";
 import Input from "./Input";
 import Upload from "./Upload";
 import Tabfooter from "./Tabfooter";
+import Switch from "./Switch";
+import Tableauteam from "./Tableauteam";
 
 import Avatar from "../img/Avatar.png";
 import { Tabs } from "antd";
@@ -20,6 +22,7 @@ export default function Verticaltabs() {
   const [isSaveEnabled, setIsSaveEnabled] = useState(false);
 
   const [activeTab, setActiveTab] = useState("tab1");
+  const [isToggled, setIsToggled] = useState(false);
 
   const handleNameChange = (event) => {
     const value = event.target.value;
@@ -75,6 +78,10 @@ export default function Verticaltabs() {
     setActiveTab(activeKey);
     setIsSaveEnabled(false); // Désactive le bouton lorsque l'onglet change
   };
+
+  const handleToggle = () => {
+    setIsToggled((prevState) => !prevState);
+  };  
 
   return (
     <Tabs defaultActiveKey="tab" tabPosition="left" onChange={handleTabChange}>
@@ -139,10 +146,30 @@ export default function Verticaltabs() {
             onChange={handleConfirmPasswordChange}
           />
           <Tabfooter isSaveEnabled={isSaveEnabled} cancel="Cancel" action= "Change password"/>
+          <div className="bottom-container">
+          <div className="section-bottom">
+            <p className="header-title">2-Factor-Authentications</p>
+            <p className="description">
+              Double your account security with 2FA security
+            </p>
+          </div>
+            <Switch label={isToggled ? "Activated" : "Not activated"} handleToggle={handleToggle}/>
+          </div>
         </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Team" key="tab3">
-        <div>Tab Content 3</div>
+      <div className="content">
+        <div className="tab-header">
+          <div className="section-header">
+            <p className="header-title">Team members</p>
+            <p className="description">
+              Manage your team members and their account permissions here.
+            </p>
+          </div>
+          <a href="#"><button className="add-btn">Add Team Member</button></a>
+        </div>
+        <Tableauteam/>
+      </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Plan & Billing" key="tab4">
         <div>Tab Content 4</div>
