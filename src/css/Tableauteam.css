@@ -1,0 +1,91 @@
+:where(.css-dev-only-do-not-override-hfzzpz).ant-table-wrapper{
+    max-width: none;
+    width: 100%;
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-spin-nested-loading .ant-spin-container{
+    border: solid 2px var(--gray-200, #EAECF0);
+    border-radius: 8px;
+}
+
+.section-label{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.label-title{
+    margin: 0;
+    color: var(--gray-700, #344054);
+
+    /* Text sm/Semibold */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+}
+
+.label-description{
+    margin: 0;
+    color: var(--gray-600, #475467);
+
+    /* Text sm/Regular */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-table-wrapper .ant-table-thead >tr>th, :where(.css-dev-only-do-not-override-hfzzpz).ant-table-wrapper .ant-table-thead >tr>td{
+    margin: 0;
+    color: var(--gray-600, #475467);
+
+    /* Text sm/Regular */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-table-wrapper .ant-table{
+    margin: 0;
+    color: var(--gray-600, #475467);
+
+    /* Text sm/Regular */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-tag.ant-tag-has-color, :where(.css-dev-only-do-not-override-hfzzpz).ant-tag.ant-tag-has-color a, :where(.css-dev-only-do-not-override-hfzzpz).ant-tag.ant-tag-has-color a:hover, :where(.css-dev-only-do-not-override-hfzzpz).ant-tag.ant-tag-has-color .anticon-close, :where(.css-dev-only-do-not-override-hfzzpz).ant-tag.ant-tag-has-color .anticon-close:hover{
+    color: var(--gray-600, #2E6E54);
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-tag{
+    border-radius: 16px;
+    border: solid 1px #BBE3D3 !important;
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-table-wrapper .ant-table-thead >tr>th, :where(.css-dev-only-do-not-override-hfzzpz).ant-table-wrapper .ant-table-thead >tr>td{
+    background: var(--gray-50, #F9FAFB);
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-badge {
+    border: 1px solid var(--gray-300, #D0D5DD);
+    border-radius: 6px;
+    padding: 2px 6px;
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-badge.ant-badge-status .ant-badge-status-success{
+    background-color :#17B26A;
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-table-wrapper .ant-table-pagination-right{
+    justify-content: center;
+
+}

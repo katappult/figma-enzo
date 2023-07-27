@@ -1,6 +1,8 @@
 import { React, useState} from 'react';
 import '../css/Tableauteam.css'
-import { Space, Table, Tag, Checkbox } from 'antd';
+import edit from '../img/edit.svg'
+import trash from '../img/trash.svg'
+import { Space, Table, Tag, Checkbox, Badge } from 'antd';
 
 export default function Tableau() {
 
@@ -30,27 +32,31 @@ export default function Tableau() {
         }
     };
 
+    function supprimerEspaces(chaine) {
+        return chaine.replace(/\s/g, '');
+    }
+
     const data = [
         {
             key: '1',
             name: 'John Brown',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
-            tags: ['nice', 'developer'],
+            role: 'Admin',
+            date: 'Feb 22, 2022',
+            tags: ['App 1', 'App 2'],
         },
         {
             key: '2',
             name: 'Jim Green',
-            age: 42,
-            address: 'London No. 1 Lake Park',
-            tags: ['loser'],
+            role: 'Editor',
+            date: 'Feb 22, 2022',
+            tags: ['App 1', 'App 2'],
         },
         {
             key: '3',
             name: 'Joe Black',
-            age: 32,
-            address: 'Sydney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
+            role: 'Editor',
+            date: 'Feb 22, 2022',
+            tags: ['App 2', 'App 3'],
         },
     ];
 
@@ -75,32 +81,38 @@ export default function Tableau() {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            render: (text) => <a>{text}</a>,
+            render: (text) => <div className="section-label">
+                                    <p className="label-title">{text}</p>
+                                    <p className="label-description">{supprimerEspaces(text.toLowerCase())}@mail.com</p>
+                                </div>,
         },
         {
-            title: 'Age',
-            dataIndex: 'age',
-            key: 'age',
+            title: 'Status',
+            key: 'state',
+            render: () => <Badge status="success" text="Active" />,
         },
         {
-            title: 'Address',
-            dataIndex: 'address',
-            key: 'address',
+            title: 'Role',
+            dataIndex: 'role',
+            key: 'role',
         },
+
+        {
+            title: 'Date',
+            dataIndex: 'date',
+            key: 'date',
+        },
+
         {
             title: 'Tags',
             key: 'tags',
             dataIndex: 'tags',
-            render: (_, record) => (
+            render: (tags) => (
                 <>
-                    {record.tags.map((tag) => {
-                        let color = tag.length > 5 ? 'geekblue' : 'green';
-                        if (tag === 'loser') {
-                            color = 'volcano';
-                        }
+                    {tags.map((tag) => {
                         return (
-                            <Tag color={color} key={tag}>
-                                {tag.toUpperCase()}
+                            <Tag color="#F9F5FF" key={tag}>
+                                {tag}
                             </Tag>
                         );
                     })}
@@ -112,8 +124,8 @@ export default function Tableau() {
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                    <a>Invite {record.name}</a>
-                    <a>Delete</a>
+                    <a><img src={edit} alt="edit" /></a>
+                    <a><img src={trash} alt="trash" /></a>
                 </Space>
             ),
         },
