@@ -81,7 +81,7 @@ export default function Tableau() {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            render: (text) => <div className="section-label">
+            render: (text) => <div className="section-label2">
                                     <p className="label-title">{text}</p>
                                     <p className="label-description">{supprimerEspaces(text.toLowerCase())}@mail.com</p>
                                 </div>,

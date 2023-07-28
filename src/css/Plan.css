@@ -1,0 +1,71 @@
+.content-box{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.heading-and-price{
+    display: flex;
+    gap: 45px;
+
+    border: solid 2px var(--gray-200, #EAECF0);
+    padding: 24px;
+    border-bottom: none;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.heading{
+    display: block;
+}
+
+.heading-content{
+    display: flex;
+}
+
+.price{
+    display: flex;
+}
+
+.price-number{
+    font-size: 50px;
+    line-height: 60px;
+    color: var(--gray-900, #193C4E);
+}
+
+.price .label-description{
+    margin-top: 35px;
+}
+
+.progress-bar-div{
+    border: solid 2px var(--gray-200, #EAECF0);
+    padding: 24px;
+    border-top: none;
+    border-bottom: none;
+}
+
+.label-progress-bar{
+    margin-bottom: 0;
+    color: var(--gray-900, #193C4E);
+}
+
+.content-box-footer{
+    padding: 24px;
+    border: 2px solid #EAECF0;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.heading-and-price .label-description{
+    font-size: 12px;
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-progress .ant-progress-success-bg, :where(.css-dev-only-do-not-override-hfzzpz).ant-progress .ant-progress-bg{
+    background-color: #3B8D6C;
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz) a{
+    color: #3B8D6C;
+}

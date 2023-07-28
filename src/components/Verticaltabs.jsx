@@ -6,6 +6,7 @@ import Upload from "./Upload";
 import Tabfooter from "./Tabfooter";
 import Switch from "./Switch";
 import Tableauteam from "./Tableauteam";
+import Plan from "./Plan";
 
 import Avatar from "../img/Avatar.png";
 import { Tabs } from "antd";
@@ -172,7 +173,15 @@ export default function Verticaltabs() {
       </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Plan & Billing" key="tab4">
-        <div>Tab Content 4</div>
+      <div className="content">
+          <div className="section-header">
+            <p className="header-title">Plan</p>
+            <p className="description">
+              Manage your billing and payment details.
+            </p>
+          </div>
+          <Plan title="Free Plan" desc="Our most popular plan for small teams." duration="Monthly" price="$0" users_number={5} all_users={20}/>
+      </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Credit" key="tab5">
         <div>Tab Content 5</div>
