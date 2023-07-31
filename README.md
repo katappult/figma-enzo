@@ -2,11 +2,27 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Instructions
 
 In the project directory, you can run:
 
-# POUR LANCER L'APP (port [localhost:3000](http://localhost:3000/))
+### Installation de Create React App 
+
+```shell
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
+### Installation de Antd
+
+```shell
+npm install antd
+```
+
+# Accèder à l'app 
+
+[localhost:3000](http://localhost:3000/)
 
 ### `npm start`
 
