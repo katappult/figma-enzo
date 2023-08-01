@@ -89,3 +89,31 @@
     justify-content: center;
 
 }
+
+.flex-direction-row-tab{
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+}
+
+.paid-box{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border:1px solid var(--success-200, #ABEFC6);
+    border-radius: 16px;
+    background: var(--success-50, #ECFDF3);
+    padding: 2px 2px 2px 6px;
+    
+}
+
+.paid{
+    margin: 0;
+    color: var(--success-700, #067647);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 150% */
+}

@@ -6,7 +6,7 @@
 
 .heading-and-price{
     display: flex;
-    gap: 63px;
+    gap: 62px;
 
     border: solid 2px var(--gray-200, #EAECF0);
     padding: 24px 24px 12px 24px;

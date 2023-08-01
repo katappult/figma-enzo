@@ -8,6 +8,7 @@ import Switch from "./Switch";
 import Tableauteam from "./Tableauteam";
 import Plan from "./Plan";
 import PMethod from "./PMethod";
+import Tableaubilling from "./Tableaubilling";
 
 import Avatar from "../img/Avatar.png";
 import visa from "../img/visa.svg"
@@ -184,7 +185,7 @@ export default function Verticaltabs() {
             </p>
           </div>
           <div className="flex-direction-row">
-            <Plan title="Free Plan" desc="Our most popular plan for small teams." duration="Monthly" price="$0" users_number={5} all_users={20}/>
+            <Plan title="Free Plan" desc="Our most popular plan for small teams." duration="Monthly" price={0} users_number={3} all_users={20}/>
             <PMethod title="Payment method" desc="Change how you pay for your plan." month={6} year={24} payment_method={visa}/>
           </div>
           <div className="bottom-container-download">
@@ -196,6 +197,7 @@ export default function Verticaltabs() {
             </div>
             <a href="#"><button className="add-btn">Download all</button></a>
           </div>
+          <Tableaubilling alt="pdf"/>
       </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Credit" key="tab5">

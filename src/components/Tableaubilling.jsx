@@ -2,9 +2,11 @@ import { React, useState} from 'react';
 import '../css/Tableau.css'
 import edit from '../img/edit.svg'
 import trash from '../img/trash.svg'
+import pdf from '../img/pdf.svg'
+import check from '../img/check.svg'
 import { Space, Table, Tag, Checkbox, Badge } from 'antd';
 
-export default function Tableau() {
+export default function Tableaubilling(alt) {
 
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
@@ -39,24 +41,27 @@ export default function Tableau() {
     const data = [
         {
             key: '1',
-            name: 'John Brown',
-            role: 'Admin',
-            date: 'Feb 22, 2022',
-            tags: ['App 1', 'App 2'],
+            invoice: 'Invoice #007 – Dec 2022',
+            plan: 'Basic Plan',
+            date: 'Dec 1, 2022',
+            amount: 10.00,
+            state:'Paid'
         },
         {
             key: '2',
-            name: 'Jim Green',
-            role: 'Editor',
-            date: 'Feb 22, 2022',
-            tags: ['App 1', 'App 2'],
+            invoice: 'Invoice #006 – Nov 2022',
+            plan: 'Basic plan',
+            date: 'Nov 1, 2022',
+            amount: 10.00,
+            state: 'Paid'
         },
         {
             key: '3',
-            name: 'Joe Black',
-            role: 'Editor',
-            date: 'Feb 22, 2022',
-            tags: ['App 2', 'App 3'],
+            invoice: 'Invoice #005 – Oct 2022',
+            plan: 'Basic Plan',
+            date: 'Oct 1, 2022',
+            amount: 10.00,
+            state: 'Paid'
         },
     ];
 
@@ -78,23 +83,13 @@ export default function Tableau() {
             ),
         },
         {
-            title: 'Name',
-            dataIndex: 'name',
-            key: 'name',
-            render: (text) => <div className="section-label2">
-                                    <p className="label-title">{text}</p>
-                                    <p className="label-description">{supprimerEspaces(text.toLowerCase())}@mail.com</p>
+            title: 'Invoice',
+            dataIndex: 'invoice',
+            key: 'invoice',
+            render: (text) => <div className="flex-direction-row-tab">
+                                <img src={pdf} alt={alt}/>
+                                <p className="label-title">{text}</p>
                                 </div>,
-        },
-        {
-            title: 'Status',
-            key: 'state',
-            render: () => <Badge status="success" text="Active" />,
-        },
-        {
-            title: 'Role',
-            dataIndex: 'role',
-            key: 'role',
         },
 
         {
@@ -104,30 +99,31 @@ export default function Tableau() {
         },
 
         {
-            title: 'Tags',
-            key: 'tags',
-            dataIndex: 'tags',
-            render: (tags) => (
-                <>
-                    {tags.map((tag) => {
-                        return (
-                            <Tag color="#F9F5FF" key={tag}>
-                                {tag}
-                            </Tag>
-                        );
-                    })}
-                </>
-            ),
+            title: 'Plan',
+            dataIndex: 'plan',
+            key: 'plan',
+        },
+
+        {
+            title: 'Status',
+            dataIndex: 'state',
+            key: 'state',
+            render: (text) => <div className="paid-box">
+                                <img src={check} />
+                                <p className="paid">{text}</p>
+                              </div>,
+        },
+
+        {
+            title: 'Amount',
+            key: 'amount',
+            dataIndex: 'amount',
+            render: (text) => <p className='label-description'>USD ${text}</p>
         },
         {
             title: 'Action',
             key: 'action',
-            render: (_, record) => (
-                <Space size="middle">
-                    <a><img src={edit} alt="edit" /></a>
-                    <a><img src={trash} alt="trash" /></a>
-                </Space>
-            ),
+            render: (text) => <a href="#">Download</a>
         },
     ];
 

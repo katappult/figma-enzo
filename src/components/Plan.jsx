@@ -16,7 +16,7 @@ export default function Plan({title, desc, duration, price, users_number, all_us
                 </div>
 
                 <div className="price">
-                    <div className="price-number">{price}</div>
+                    <div className="price-number">${price}</div>
                     <div className="label-description">per month</div>
                 </div>
             </div>
