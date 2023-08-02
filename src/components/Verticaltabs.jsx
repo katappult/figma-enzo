@@ -9,6 +9,7 @@ import Tableauteam from "./Tableauteam";
 import Plan from "./Plan";
 import PMethod from "./PMethod";
 import Tableaubilling from "./Tableaubilling";
+import Creditbalance from "./Creditbalance";
 
 import Avatar from "../img/Avatar.png";
 import visa from "../img/visa.svg"
@@ -201,10 +202,30 @@ export default function Verticaltabs() {
       </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Credit" key="tab5">
-        <div>Tab Content 5</div>
+        <div className="content">
+          <div className="tab-header">
+          <div className="section-header">
+            <p className="header-title">Credit</p>
+            <p className="description">
+              Lorem ipsum dolor sit amet consectetur. Non ipsum tincidunt etiam quam augue lectus.
+            </p>
+          </div>
+          </div>
+          <Creditbalance credits_used={9} total_credits={10}/>
+          <Tableaubilling alt="pdf"/>
+        </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Notifications" key="tab6">
-        <div>Tab Content 6</div>
+        <div className="content">
+          <div className="tab-header">
+            <div className="section-header">
+              <p className="header-title">Notifications</p>
+              <p className="description">
+                We may still send you important notifications about your account outside of your notification settings.
+              </p>
+            </div>
+          </div>
+        </div>
       </Tabs.TabPane>
     </Tabs>
   );
