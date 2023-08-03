@@ -1,0 +1,19 @@
+.change-box{
+    display: flex;
+    border-top: 2px solid #EAECF0;
+    padding-top: 24px;
+    gap: 64px;
+    width: 100%;
+}
+
+.change-box-info{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.change-box-toggles{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

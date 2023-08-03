@@ -10,6 +10,7 @@ import Plan from "./Plan";
 import PMethod from "./PMethod";
 import Tableaubilling from "./Tableaubilling";
 import Creditbalance from "./Creditbalance";
+import Notifications from "./Notifications";
 
 import Avatar from "../img/Avatar.png";
 import visa from "../img/visa.svg"
@@ -225,6 +226,8 @@ export default function Verticaltabs() {
               </p>
             </div>
           </div>
+          <Notifications title="Change" description="These are notifications for when someone made a change about your project" id_switch="change"/>
+          <Notifications title="Reminders" description="These are notifications to remind you of updates you might have missed." id_switch="reminders"/>
         </div>
       </Tabs.TabPane>
     </Tabs>
