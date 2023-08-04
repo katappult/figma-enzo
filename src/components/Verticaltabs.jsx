@@ -88,7 +88,14 @@ export default function Verticaltabs() {
 
   const handleToggle = () => {
     setIsToggled((prevState) => !prevState);
-  };  
+  };
+  
+  let switchCounter = 0;
+  
+  const generateUniqueSwitchId = () => {
+    switchCounter += 1;
+    return `switch-${switchCounter}`;
+  };
 
   return (
     <Tabs defaultActiveKey="tab" tabPosition="left" onChange={handleTabChange}>
@@ -226,8 +233,8 @@ export default function Verticaltabs() {
               </p>
             </div>
           </div>
-          <Notifications title="Change" description="These are notifications for when someone made a change about your project" id_switch="change"/>
-          <Notifications title="Reminders" description="These are notifications to remind you of updates you might have missed." id_switch="reminders"/>
+          <Notifications title="Change" description="These are notifications for when someone made a change about your project"  id_switch={generateUniqueSwitchId()}/>
+          <Notifications title="Reminders" description="These are notifications to remind you of updates you might have missed."  id_switch={generateUniqueSwitchId()}/>
         </div>
       </Tabs.TabPane>
     </Tabs>

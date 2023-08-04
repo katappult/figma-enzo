@@ -1,15 +1,26 @@
-import {React, useState} from "react";
-import '../css/Switch.css'
+// Switch.jsx
+import React, { useState } from "react";
+import "../css/Switch.css";
 
-export default function Switch({handleToggle, label, id_switch}){
+export default function Switch({ handleToggle, label, id_switch }) {
+  const [isToggled, setIsToggled] = useState(false);
 
-    const switchId = `${id_switch}-push`;
+  const handleChange = () => {
+    setIsToggled((prevState) => !prevState);
+    handleToggle();
+  };
 
-    return(
-        <div className="switch-container">
-            <input type="checkbox" id={switchId} className="input-switch" onClick={handleToggle}/>
-            <label htmlFor={switchId} className="button"></label>
-            <p className="switch-label">{label}</p>
-        </div>
-    )
+  return (
+    <div className="switch-container">
+      <input
+        type="checkbox"
+        id={`switch-${id_switch}`}
+        className="input-switch"
+        checked={isToggled}
+        onChange={handleChange}
+      />
+      <label htmlFor={`switch-${id_switch}`} className="button"></label>
+      <p className="switch-label">{label}</p>
+    </div>
+  );
 }
