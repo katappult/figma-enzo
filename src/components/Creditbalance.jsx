@@ -4,7 +4,7 @@ import { Progress} from 'antd';
 
 export default function Creditbalance({credits_used, total_credits}){
 
-    const balance =  total_credits - credits_used;
+    var balance =  total_credits - credits_used;
 
     return(
         <div className="content-credit">

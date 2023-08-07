@@ -47,3 +47,34 @@
     border: 1px solid #2E6E54;
     cursor: pointer;
 }
+
+.save-label-activated{
+    background: #2E6E54 !important;
+    border: 1px solid #2E6E54 !important;
+    cursor: pointer !important;
+}
+
+.save-label{
+    background: var(--primary-200, #BBE3D3);
+    border: 1px solid var(--primary-200, #BBE3D3);
+    border-radius: 8px;
+    padding: 10px 16px;
+
+    cursor: not-allowed;
+
+    color: var(--base-white, #FFF);
+    /* Text sm/Semibold */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+}
+
+.link-label{
+    display: flex;
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-btn{
+    display: none;
+}

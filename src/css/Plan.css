@@ -83,3 +83,30 @@
 :where(.css-dev-only-do-not-override-hfzzpz) a:hover{
     color: #3B8D6C;
 }
+
+.green-link{
+    color: #3B8D6C;
+    cursor: pointer;
+}
+
+.modal-container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--gray-200, #EAECF0);
+}
+
+.plan-box-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-footer{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: flex-end;
+}
