@@ -4,6 +4,7 @@ import '../css/Plan.css'
 import Layertwo from './Layertwo';
 import Layerthree from './Layerthreeicon'
 import Zapicon from './Zapicon';
+import Paymentbox from './Paymentbox';
 
 import {Progress, Button, Modal} from 'antd';
 
@@ -11,11 +12,14 @@ import {Progress, Button, Modal} from 'antd';
 export default function Plan({title, desc, duration, price, users_number, all_users}){
 
     const [modal2Open, setModal2Open] = useState(false);
+    const [modalPaymentOpen, setModalPaymentOpen] = useState(false);
 
     const [isRadioChecked, setIsRadioChecked] = useState(false);
 
+    
+
     const handleUpgradePlan = () => {
-        setIsRadioChecked((prevState) => !prevState)
+        setIsRadioChecked((prevState) => !prevState);
     };
 
     return(
@@ -55,7 +59,7 @@ export default function Plan({title, desc, duration, price, users_number, all_us
                         <div className='plan-box-container'>
                         <Planbox
                             img_source={<Layertwo/>}
-                            title="Free Plan" 
+                            title="Free Plan"
                             radio_name="radio free" 
                             radio_id="01" 
                             divClassName="price-container"
@@ -92,7 +96,25 @@ export default function Plan({title, desc, duration, price, users_number, all_us
                         </div>
                         <div className='modal-footer'>
                             <a href="#"><button className="action-white">Cancel</button></a>
-                            <a href="#" className='link-label'><label className={`save-label ${isRadioChecked ? "save-label-activated" : ""}`}  htmlFor='idUpgradePlan'>🚀 Upgrade Plan</label></a>
+                            {isRadioChecked ? 
+                                <a href="#" className='link-label'><label className="save-label save-label-activated"  htmlFor='idUpgradePlan'>🚀 Upgrade Plan</label></a> 
+                                : 
+                                <a href="#" className='link-label'><button className="save-label" htmlFor='idUpgradePlan' disabled>🚀 Upgrade Plan</button></a>
+                            }
+                            <Button type="primary" onClick={() => setModalPaymentOpen(true)} id='idUpgradePlan'>
+                                Vertically centered modal dialog
+                            </Button>
+                            <Modal
+                                title="Payment Method"
+                                centered
+                                open={modalPaymentOpen}
+                                onOk={() => setModalPaymentOpen(false)}
+                                onCancel={() => setModalPaymentOpen(false)}
+                            >
+                                <div className='modal-container'>
+                                    <Paymentbox/>
+                                </div>
+                            </Modal>
                         </div>
                     </div>
                 </Modal>
