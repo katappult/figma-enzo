@@ -12,12 +12,12 @@ export default function Planbox({img_source, title, radio_name, radio_id, divCla
 
     return(
         <div className="plan-box">
-            <div className="plan-box-header">
+            <div className={isRadioChecked ? "plan-box-header-selected" : "plan-box-header"}>
                 {img_source}
                 <p className="label-title">{title}</p>
                 <input type="radio" name={radio_name} id={radio_id} checked={isRadioChecked} onChange={handleChange}/>
             </div>
-            <div className="plan-box-content">
+            <div className={isRadioChecked ? "plan-box-content-selected" : "plan-box-content"}>
                 <div className={divClassName}>
                     <p className="plan-price">${price}</p>
                     <p className="label-description">per month</p>
