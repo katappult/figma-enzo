@@ -2,7 +2,7 @@ import { React, useState} from 'react';
 import '../css/Tableau.css'
 import edit from '../img/edit.svg'
 import trash from '../img/trash.svg'
-import { Space, Table, Tag, Checkbox, Badge } from 'antd';
+import { Space, Table, Tag, Checkbox, Badge} from 'antd';
 
 export default function Tableau() {
 

@@ -78,3 +78,10 @@
     margin-top: 5px;
 }
 
+.plan-box-content-selected a{
+    width: 130px;
+}
+
+.plan-box-content a{
+    width: 130px;
+}

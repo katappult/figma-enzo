@@ -1,0 +1,18 @@
+.confirmation-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.confirmation-icon{
+    padding: 12px;
+    border-radius: 10px;
+    height: 51px;
+    border: 1px solid var(--gray-200, #EAECF0);
+}
+
+.confirmation-content div p{
+    text-align: center;
+}
