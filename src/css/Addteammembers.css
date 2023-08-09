@@ -1,0 +1,20 @@
+.add-team-m-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.radio-container{
+    display: flex;
+    gap: 8px;
+}
+
+.label-radio{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-team-m-container .input-field{
+    width: 456px;
+    align-self: flex-start;
+}

@@ -11,15 +11,19 @@ import PMethod from "./PMethod";
 import Tableaubilling from "./Tableaubilling";
 import Creditbalance from "./Creditbalance";
 import Notifications from "./Notifications";
+import Addteammembers from "./Addteammembers";
 
 import Avatar from "../img/Avatar.png";
 import visa from "../img/visa.svg"
 
 
-import { Tabs } from "antd";
+import { Tabs, Button, Modal  } from "antd";
 import Password from "antd/es/input/Password";
 
 export default function Verticaltabs() {
+
+  const [modalAddMemberOpen, setModalAddMemberOpen] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -185,7 +189,21 @@ export default function Verticaltabs() {
               Manage your team members and their account permissions here.
             </p>
           </div>
-          <a href="#"><button className="add-btn">Add Team Member</button></a>
+          <a href="#" className='link-label'><label className="add-btn" htmlFor='idAddMember'> + Add Team Member</label></a> 
+          <Button type="primary" onClick={() => setModalAddMemberOpen(true)} id='idAddMember'>
+            Vertically centered modal dialog
+          </Button>
+          <Modal
+            title="Add Team Member"
+            centered
+            open={modalAddMemberOpen}
+            onOk={() => setModalAddMemberOpen(false)}
+            onCancel={() => setModalAddMemberOpen(false)}
+          >
+            <div className='modal-container'>
+              <Addteammembers/>
+            </div>
+          </Modal>
         </div>
         <Tableauteam/>
       </div>

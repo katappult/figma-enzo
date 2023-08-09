@@ -47,3 +47,22 @@
 .card-details-input-short .input-field{
     width: 84px;
 }
+
+.action-white-close{
+    background: none;
+    border: 1px solid rgb(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 10px 16px;
+
+    cursor: pointer;
+
+    color: var(--gray-700, #344054);
+    /* Text sm/Semibold */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+    width: 100%;
+    text-align: center;
+}

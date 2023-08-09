@@ -1,7 +1,11 @@
 import {React, useState} from "react";
 import '../css/Paymentbox.css'
+import {Button, Modal} from 'antd';
+import Confirmation from "./Confirmation";
 
 export default function Paymentbox(){
+
+    const [modalSavePayment, setModalSavePayment] = useState(false);
 
     const [isSaveEnabled, setIsSaveEnabled] = useState(false);
 
@@ -111,7 +115,7 @@ export default function Paymentbox(){
             <div className="card-details-box">
                 <div className="card-details-input-container">
                     <div className="card-details-input-long2">
-                        <p className="label-title">Email Adress</p>
+                        <p className="label-title">Email Adress (yourname@mail.com)</p>
                         <p className="label-description">Invoices will be sent to this email address.</p>
                         <input type="text" className="input-field" value={email} onChange={handleEmailChange}/>
                         <a href="#">+ Add another</a>
@@ -158,6 +162,24 @@ export default function Paymentbox(){
                 : 
                 <a href="###" className='link-label'><button className="save-label" htmlFor='idSavePayment' disabled>Save payment info</button></a>
             }
+            <Button type="primary" onClick={() => setModalSavePayment(true)} id='idSavePayment'>
+                                Vertically centered modal dialog
+                            </Button>
+                            <Modal
+                                title="Confirm PIN Code"
+                                centered
+                                open={modalSavePayment}
+                                onOk={() => setModalSavePayment(false)}
+                                onCancel={() => setModalSavePayment(false)}
+                            >
+                                <div className='modal-container'>
+                                    <Confirmation message="Payment details are saved." description="You will be billed automatically every {{Billing Date}}." />
+                                </div>
+                                <a href="###" className='link-label'><label className="action-white-close"  htmlFor='idClosePayment'>Close</label></a> 
+                                <Button type="primary" onClick={() => setModalSavePayment(false)} id='idClosePayment'>
+                                    Vertically centered modal dialog
+                                </Button>
+                            </Modal>
         </div>
     </>;
 }
