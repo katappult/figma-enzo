@@ -4,8 +4,8 @@ import {Radio} from 'antd';
 
 export default function Buycredit({price10, price20, price30, discount}){
 
-    const currentPrice = document.querySelector('.ant-radio-button-wrapper .ant-radio-button-wrapper-checked css-dev-only-do-not-override-hfzzpz');
-    const selectedSpan = currentPrice.querySelector('span');
+    //const currentPrice = document.querySelector('.ant-radio-button-wrapper .ant-radio-button-wrapper-checked css-dev-only-do-not-override-hfzzpz');
+    //const selectedSpan = currentPrice.querySelector('span');
 
     return(
         <div className="buy-credit-container">
