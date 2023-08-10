@@ -2,9 +2,36 @@ import { React, useState} from 'react';
 import '../css/Tableau.css'
 import edit from '../img/edit.svg'
 import trash from '../img/trash.svg'
-import { Space, Table, Tag, Checkbox, Badge} from 'antd';
+import Addteammembers from './Addteammembers';
+import Confirmation from './Confirmation';
+import { Space, Table, Tag, Checkbox, Badge, Button, Modal } from 'antd';
 
 export default function Tableau() {
+
+    const [modalAddMemberOpen, setModalAddMemberOpen] = useState(false);
+    const [modalAddButtonOpen, setModalAddButtonOpen] = useState(false);
+
+    const [email, setEmail] = useState("");
+    const [isSaveEnabled, setIsSaveEnabled] = useState(false);
+
+    const handleChange = (event) => {
+        const value = event.target.value;
+        setEmail(value);
+        updateSaveButtonState(value);
+    }
+
+    const isValidEmail = (email) => {
+        // Cette fonction vérifie que le mail entré respecte le format texte@domaine.com
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+      };
+
+    const updateSaveButtonState = (emailValue) => {
+        const isFilled = emailValue != "";
+        const isValidEmailAdress = isValidEmail(emailValue);
+
+        setIsSaveEnabled(isFilled && isValidEmailAdress);
+    }
 
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
@@ -134,6 +161,57 @@ export default function Tableau() {
     
 
     return (
-        <Table columns={columns} dataSource={data} />
+        <div className="content">
+        <div className="tab-header">
+          <div className="section-header">
+            <p className="header-title">Team members</p>
+            <p className="description">
+              Manage your team members and their account permissions here.
+            </p>
+          </div>
+          <a href="#" className='link-label'><label className="add-btn" htmlFor='idAddMember'> + Add Team Member</label></a> 
+          <Button type="primary" onClick={() => setModalAddMemberOpen(true)} id='idAddMember'>
+            Vertically centered modal dialog
+          </Button>
+          <Modal
+            title="Add Team Member"
+            centered
+            open={modalAddMemberOpen}
+            onOk={() => setModalAddMemberOpen(false)}
+            onCancel={() => setModalAddMemberOpen(false)}
+          >
+            <div className='modal-container'>
+              <Addteammembers value_input={email} handleOnChange={handleChange}/>
+            </div>
+            <div className='modal-footer'>
+                <a href="#"><button className="action-white">Cancel</button></a>
+                {isSaveEnabled ? 
+                    <a href="###" className='link-label'><label className="save-label save-label-activated"  htmlFor='idAddButton'>Add</label></a> 
+                    : 
+                    <a href="###" className='link-label'><button className="save-label" htmlFor='idAddButton' disabled>Add</button></a>
+                }
+                <Button type="primary" onClick={() => setModalAddButtonOpen(true)} id='idAddButton'>
+                    Vertically centered modal dialog
+                </Button>
+                <Modal
+                    title="Add Team Member"
+                    centered
+                    open={modalAddButtonOpen}
+                    onOk={() => setModalAddButtonOpen(false)}
+                    onCancel={() => setModalAddButtonOpen(false)}
+                    >
+                    <div className='modal-container'>
+                        <Confirmation message="Invite Sent" description="We have sent an invitation email to your team members. Notify your team members to confirm the email to join you on the Katappult platform." />
+                    </div>
+                    <a href="###" className='link-label'><label className="action-white-close"  htmlFor='idClosePayment'>Close</label></a> 
+                    <Button type="primary" onClick={() => setModalAddButtonOpen(false)} id='idClosePayment'>
+                        Vertically centered modal dialog
+                    </Button>
+                </Modal>
+            </div>
+          </Modal>
+        </div>
+            <Table columns={columns} dataSource={data} />
+        </div>
     )
 }

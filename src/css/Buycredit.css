@@ -1,0 +1,82 @@
+:where(.css-dev-only-do-not-override-hfzzpz).ant-radio-group{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.88);
+    line-height: 1.5714285714285714;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz)[class^="ant-radio"], :where(.css-dev-only-do-not-override-hfzzpz)[class*=" ant-radio"]{
+    font-family: Inter;
+}
+
+:where(.css-dev-only-do-not-override-hfzzpz).ant-radio-button-wrapper {
+    position: relative;
+    display: flex;
+    height: auto;
+    margin: 0;
+    padding-inline: 0;
+    padding-block: 0;
+    padding: 8px;
+    color: rgb(0 0 0 / 88%);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 30px;
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-block-start-width: 1.02px;
+    border-inline-start-width: 0;
+    border-inline-end-width: 1px;
+    cursor: pointer;
+    transition: color 0.2s,background 0.2s,border-color 0.2s,box-shadow 0.2s;
+}
+
+.ant-radio-group-solid :where(.css-dev-only-do-not-override-hfzzpz).ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    color: #2e6e54;
+    background: var(--primary-100, #E8F6F0);
+    border-color: #2e6e54;
+}
+
+.ant-radio-group-solid :where(.css-dev-only-do-not-override-hfzzpz).ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover{
+    color: #2e6e54;
+    background: var(--primary-100, #E8F6F0);
+    border-color: #2e6e54;
+}
+
+.buy-credit-container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.buy-credit-box{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--gray-200, #EAECF0);
+}
+
+.check-discount{
+    display: flex;
+    gap: 16px;
+}
+
+.buy-credit-box .check-discount .input-field{
+    width: 356px;
+    align-self: flex-start;
+}
+
+.buy-credit-box .check-discount .save-label{
+    width: 84px;
+    text-align: center;
+}
+
+.summary-info{
+    display: flex;
+    justify-content: space-between;
+}
+
