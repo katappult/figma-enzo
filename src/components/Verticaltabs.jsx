@@ -22,7 +22,7 @@ import Password from "antd/es/input/Password";
 
 export default function Verticaltabs() {
 
-  const [modalAddMemberOpen, setModalAddMemberOpen] = useState(false);
+  
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -181,32 +181,7 @@ export default function Verticaltabs() {
         </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Team" key="tab3">
-      <div className="content">
-        <div className="tab-header">
-          <div className="section-header">
-            <p className="header-title">Team members</p>
-            <p className="description">
-              Manage your team members and their account permissions here.
-            </p>
-          </div>
-          <a href="#" className='link-label'><label className="add-btn" htmlFor='idAddMember'> + Add Team Member</label></a> 
-          <Button type="primary" onClick={() => setModalAddMemberOpen(true)} id='idAddMember'>
-            Vertically centered modal dialog
-          </Button>
-          <Modal
-            title="Add Team Member"
-            centered
-            open={modalAddMemberOpen}
-            onOk={() => setModalAddMemberOpen(false)}
-            onCancel={() => setModalAddMemberOpen(false)}
-          >
-            <div className='modal-container'>
-              <Addteammembers/>
-            </div>
-          </Modal>
-        </div>
         <Tableauteam/>
-      </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Plan & Billing" key="tab4">
       <div className="content">
@@ -233,18 +208,18 @@ export default function Verticaltabs() {
       </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Credit" key="tab5">
-        <div className="content">
+          <div className="content">
           <div className="tab-header">
           <div className="section-header">
             <p className="header-title">Credit</p>
             <p className="description">
               Lorem ipsum dolor sit amet consectetur. Non ipsum tincidunt etiam quam augue lectus.
             </p>
+            </div>
+            </div>
+            <Creditbalance credits_used={3} total_credits={10}/>
+            <Tableaubilling alt="pdf"/>
           </div>
-          </div>
-          <Creditbalance credits_used={3} total_credits={10}/>
-          <Tableaubilling alt="pdf"/>
-        </div>
       </Tabs.TabPane>
       <Tabs.TabPane tab="Notifications" key="tab6">
         <div className="content">

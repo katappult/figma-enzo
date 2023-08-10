@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import '../css/Addteammembers.css'
 import { Radio, Space } from 'antd';
 
-export default function Addteammembers(){
+export default function Addteammembers({value_input, handleOnChange}){
 
     const [value, setValue] = useState(1);
     const onChange = (e) => {
@@ -13,7 +13,7 @@ export default function Addteammembers(){
     return(
         <div className="add-team-m-container">
             <p className="label-title">User Email (mail@domain.com)</p>
-            <input type="text" className="input-field" placeholder="Enter your member's mail"/>
+            <input type="text" className="input-field" placeholder="Enter your member's mail" value={value_input} onChange={handleOnChange}/>
             <p className="label-title">Role</p>
             <Radio.Group onChange={onChange} value={value}>
             <Space direction="vertical">

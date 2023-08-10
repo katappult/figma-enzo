@@ -4,9 +4,12 @@ import edit from '../img/edit.svg'
 import trash from '../img/trash.svg'
 import pdf from '../img/pdf.svg'
 import check from '../img/check.svg'
-import { Space, Table, Tag, Checkbox, Badge } from 'antd';
+
+import { Space, Table, Tag, Checkbox, Badge} from 'antd';
 
 export default function Tableaubilling(alt) {
+
+    
 
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
