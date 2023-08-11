@@ -162,23 +162,24 @@ export default function Paymentbox(){
                 : 
                 <a href="###" className='link-label'><button className="save-label" htmlFor='idSavePayment' disabled>Save payment info</button></a>
             }
-            <Button type="primary" onClick={() => setModalSavePayment(true)} id='idSavePayment'>
+            <button type="primary" onClick={() => setModalSavePayment(true)} id='idSavePayment' style={{display: 'none'}}>
                                 Vertically centered modal dialog
-                            </Button>
+                            </button>
                             <Modal
                                 title="Confirm PIN Code"
                                 centered
                                 open={modalSavePayment}
                                 onOk={() => setModalSavePayment(false)}
                                 onCancel={() => setModalSavePayment(false)}
+                                footer={null}
                             >
                                 <div className='modal-container'>
                                     <Confirmation message="Payment details are saved." description="You will be billed automatically every {{Billing Date}}." />
                                 </div>
                                 <a href="###" className='link-label'><label className="action-white-close"  htmlFor='idClosePayment'>Close</label></a> 
-                                <Button type="primary" onClick={() => setModalSavePayment(false)} id='idClosePayment'>
+                                <button type="primary" onClick={() => setModalSavePayment(false)} id='idClosePayment' style={{display: 'none'}}>
                                     Vertically centered modal dialog
-                                </Button>
+                                </button>
                             </Modal>
         </div>
     </>;

@@ -3,7 +3,7 @@ import "../../node_modules/antd/dist/reset.css";
 import "../css/Verticaltabs.css";
 import Input from "./Input";
 import Upload from "./Upload";
-import Tabfooter from "./Tabfooter.tsx";
+import Tabfooter from "./Tabfooter";
 import Switch from "./Switch";
 import Tableauteam from "./Tableauteam";
 import Plan from "./Plan";

@@ -138,7 +138,7 @@ export default function Tableau() {
                 <>
                     {tags.map((tag) => {
                         return (
-                            <Tag color="#F9F5FF" key={tag}>
+                            <Tag color="#F9F5FF" key={tag} className='enzo'>
                                 {tag}
                             </Tag>
                         );
@@ -170,15 +170,16 @@ export default function Tableau() {
             </p>
           </div>
           <a href="#" className='link-label'><label className="add-btn" htmlFor='idAddMember'> + Add Team Member</label></a> 
-          <Button type="primary" onClick={() => setModalAddMemberOpen(true)} id='idAddMember'>
+          <button type="primary" onClick={() => setModalAddMemberOpen(true)} id='idAddMember' style={{display: 'none'}}>
             Vertically centered modal dialog
-          </Button>
+          </button>
           <Modal
             title="Add Team Member"
             centered
             open={modalAddMemberOpen}
             onOk={() => setModalAddMemberOpen(false)}
             onCancel={() => setModalAddMemberOpen(false)}
+            footer={null}
           >
             <div className='modal-container'>
               <Addteammembers value_input={email} handleOnChange={handleChange}/>
@@ -190,15 +191,16 @@ export default function Tableau() {
                     : 
                     <a href="###" className='link-label'><button className="save-label" htmlFor='idAddButton' disabled>Add</button></a>
                 }
-                <Button type="primary" onClick={() => setModalAddButtonOpen(true)} id='idAddButton'>
+                <button type="primary" onClick={() => setModalAddButtonOpen(true)} id='idAddButton' style={{display: 'none'}}>
                     Vertically centered modal dialog
-                </Button>
+                </button>
                 <Modal
                     title="Add Team Member"
                     centered
                     open={modalAddButtonOpen}
                     onOk={() => setModalAddButtonOpen(false)}
                     onCancel={() => setModalAddButtonOpen(false)}
+                    footer={null}
                     >
                     <div className='modal-container'>
                         <Confirmation message="Invite Sent" description="We have sent an invitation email to your team members. Notify your team members to confirm the email to join you on the Katappult platform." />

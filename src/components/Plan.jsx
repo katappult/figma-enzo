@@ -6,7 +6,7 @@ import Layerthree from './Layerthreeicon'
 import Zapicon from './Zapicon';
 import Paymentbox from './Paymentbox';
 
-import {Progress, Button, Modal} from 'antd';
+import {Progress, Button, Modal, ConfigProvider} from 'antd';
 
 
 export default function Plan({title, desc, duration, price, users_number, all_users}){
@@ -40,20 +40,20 @@ export default function Plan({title, desc, duration, price, users_number, all_us
             </div>
             <div className="progress-bar-div">
                 <p className="label-progress-bar">{users_number} of {all_users} users</p>
-                
-                    <Progress percent={(users_number/all_users)*100} />
+                    <Progress percent={(users_number/all_users)*100} type='primary'/>
             </div>
             <div className="content-box-footer">
                 <label htmlFor='PlanModal' className='green-link'>Upgrade Plan</label>
-                <Button type="primary" onClick={() => setModal2Open(true)} id='PlanModal'>
+                <button type="primary" onClick={() => setModal2Open(true)} id='PlanModal' style={{display: 'none'}}>
                     Vertically centered modal dialog
-                </Button>
+                </button>
                 <Modal
                     title="Upgrade plan"
                     centered
                     open={modal2Open}
                     onOk={() => setModal2Open(false)}
                     onCancel={() => setModal2Open(false)}
+                    footer={null}
                 >
                     <div className='modal-container'>
                         <div className='plan-box-container'>
@@ -101,15 +101,16 @@ export default function Plan({title, desc, duration, price, users_number, all_us
                                 : 
                                 <a href="#" className='link-label'><button className="save-label" htmlFor='idUpgradePlan' disabled>🚀 Upgrade Plan</button></a>
                             }
-                            <Button type="primary" onClick={() => setModalPaymentOpen(true)} id='idUpgradePlan'>
+                            <button type="primary" onClick={() => setModalPaymentOpen(true)} id='idUpgradePlan' style={{display: 'none'}}>
                                 Vertically centered modal dialog
-                            </Button>
+                            </button>
                             <Modal
                                 title="Payment Method"
                                 centered
                                 open={modalPaymentOpen}
                                 onOk={() => setModalPaymentOpen(false)}
                                 onCancel={() => setModalPaymentOpen(false)}
+                                footer={null}
                             >
                                 <div className='modal-container'>
                                     <Paymentbox/>
