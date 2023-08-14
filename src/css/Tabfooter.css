@@ -75,6 +75,3 @@
     display: flex;
 }
 
-:where(.css-dev-only-do-not-override-hfzzpz).ant-btn{
-    display: none;
-}

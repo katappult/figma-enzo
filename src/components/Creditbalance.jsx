@@ -18,15 +18,16 @@ export default function Creditbalance({credits_used, total_credits}){
                 </div>
                 <div className="credit-box-buttons">
                     <a href="#" className='link-label'><label className="save-label save-label-activated"  htmlFor='idBuyCredit'>Buy Credit</label></a>
-                    <Button type="primary" onClick={() => setModalBuyCreditOpen(true)} id='idBuyCredit'>
+                    <button type="primary" onClick={() => setModalBuyCreditOpen(true)} id='idBuyCredit' style={{display: 'none'}}>
                         Vertically centered modal dialog
-                    </Button>
+                    </button>
                     <Modal
                         title="Buy Credit"
                         centered
                         open={modalBuyCreditOpen}
                         onOk={() => setModalBuyCreditOpen(false)}
                         onCancel={() => setModalBuyCreditOpen(false)}
+                        footer={null}
                         >
                         <div className='modal-container'>
                             <Buycredit price10={50} price20={100} price30={150} discount={0}/>

@@ -97,6 +97,8 @@
     align-items: center;
 }
 
+.ant-table-cell .enzo{color: #344054;}
+
 .paid-box{
     display: flex;
     align-items: center;
